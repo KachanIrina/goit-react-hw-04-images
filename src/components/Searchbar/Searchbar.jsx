@@ -1,17 +1,11 @@
 import { useState } from 'react';
 import css from './Searchbar.module.css';
 import propTypes from 'prop-types';
+import { FaSearch } from 'react-icons/fa';
 
-export default function Searchbar(onSubmit) {
-  // state = {
-  //   query: '',
-  // };
-
+export default function Searchbar({ onSubmit }) {
   const [query, setQuery] = useState('');
 
-  // const hendlChange = evt => {
-  //   this.setState({ query: evt.currentTarget.value });
-  // };
   const hendlChange = evt => {
     setQuery(evt.currentTarget.value);
   };
@@ -20,16 +14,16 @@ export default function Searchbar(onSubmit) {
     evt.preventDefault();
 
     if (query.trim() === '') {
-      return alert('');
+      return alert('Введите запрос');
     }
-    onSubmit = { query };
+    onSubmit(query);
   };
 
   return (
     <header className={css.searchbar}>
       <form className={css.form} onSubmit={handleSubmit}>
         <button type="submit" className="button">
-          <span className={css.buttonLabel}>Search</span>
+          <FaSearch />
         </button>
 
         <input
