@@ -32,7 +32,6 @@ export default function Modal({ onClose, largeImg }) {
 }
 
 Modal.propTypes = {
-  onClick: propTypes.func,
   onClose: propTypes.func.isRequired,
   largeImg: propTypes.string.isRequired,
 };

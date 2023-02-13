@@ -35,9 +35,8 @@ export default function App() {
         setIsLoading(false);
       }
     };
-    if (query) {
-      fetchData();
-    }
+
+    fetchData();
   }, [query, page]);
 
   const handleLoadMore = () => {
